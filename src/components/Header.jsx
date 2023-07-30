@@ -4,7 +4,7 @@ import trollFace from "../../public/assets/TrollFace.png";
 
 function Header() {
   return (
-    <nav className="bg-slate-900 m-0 flex justify-between bg-gradient-to-r from-violet-800 to-violet-600 text-white">
+    <nav className="bg-slate-900 m-0 flex justify-between bg-gradient-to-r from-purple-800 to-purple-600 text-white">
       <div className="flex p-4 items-center">
         <img src={trollFace} alt="" className="h-8 w-10" />
         <h2 className="p-4">Meme Generator</h2>
