@@ -10,7 +10,7 @@ function Header() {
         <h2 className="p-4">Meme Generator</h2>
       </div>
       <div className="p-8">
-        <h2 className="font-sans">React - Project 3</h2>
+        <h2 className="font-sans">React-Project 3</h2>
       </div>
     </nav>
   );
