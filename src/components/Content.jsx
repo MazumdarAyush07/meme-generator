@@ -21,6 +21,14 @@ function Content() {
     });
   }
 
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  }
+
   return (
     <div className="p-9 bg-slate-300">
       <div action="" className="grid grid-cols-2 gap-4">
@@ -28,11 +36,17 @@ function Content() {
           type="text"
           className="p-3 border-black rounded-md indent-1"
           placeholder="top text"
+          name="topText"
+          value={meme.topText}
+          onChange={handleChange}
         />
         <input
           type="text"
           className="p-3 border-black rounded-md indent-1"
           placeholder="bottom text"
+          name="bottomText"
+          value={meme.bottomText}
+          onChange={handleChange}
         />
         <button
           className="bg-gradient-to-r from-purple-800 to-purple-600 text-white rounded p-3 col-start-1 col-end-3 cursor-pointer"
@@ -41,7 +55,15 @@ function Content() {
           Get a new meme image 🖼
         </button>
       </div>
-      <img src={meme.randomImage} className="max-w-full my-5" />
+      <div className="relative flex items-center justify-center">
+        <img src={meme.randomImage} className="max-w-full border-4" />
+        <h2 className="absolute w-4/5 left-1/2 -translate-x-1/2 text-center my-4 px-1 font-sans text-4xl uppercase tracking-widest text-white top-0 ">
+          {meme.topText}
+        </h2>
+        <h2 className="absolute w-4/5 left-1/2 -translate-x-1/2 text-center my-4 px-1 font-sans text-4xl uppercase tracking-widest text-white bottom-0 ">
+          {meme.bottomText}
+        </h2>
+      </div>
     </div>
   );
 }
